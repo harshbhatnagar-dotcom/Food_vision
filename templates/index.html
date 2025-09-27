@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Vision</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h1 class="fw-bold" style="color:#0a6c64;">🍴 Food Vision</h1>
+      <p class="lead text-secondary">Upload a food image and let the us predict the dish</p>
+    </div>
+
+    <!-- Upload Card -->
+    <div class="card shadow-lg mx-auto mb-5 border-0" style="max-width: 500px;">
+      <div class="card-body p-4 bg-white rounded-4">
+        <h5 class="card-title mb-4 text-center fw-bold" style="color:#0a6c64;">Upload Your Image</h5>
+        <form method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <input class="form-control form-control-lg border-2" type="file" name="file" accept="image/*" required>
+          </div>
+          <button class="btn btn-success btn-lg w-100 text-white fw-bold" type="submit">Predict</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Prediction Result -->
+    {% if prediction %}
+    <div class="card shadow-lg mx-auto border-0" style="max-width: 600px;">
+      <div class="card-body p-4 bg-white rounded-4">
+        <h3 class="text-success text-center mb-4">🎯 Prediction Result</h3>
+
+        <!-- Uploaded Image -->
+        <div class="text-center mb-4">
+          <img src="{{ img_data }}" class="img-fluid rounded shadow-sm" style="max-height: 350px;">
+        </div>
+
+        <!-- Prediction -->
+        <div class="text-center">
+          <h5 class="mb-2 fw-bold" style="color:#0a6c64;">Predicted Dish:</h5>
+          <p class="fs-4 fw-bold text-danger">{{ prediction }}</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
