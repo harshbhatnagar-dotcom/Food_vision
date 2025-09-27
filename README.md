@@ -16,7 +16,7 @@ A web application that uses a **deep learning model** to classify food images in
 
 ## Requirements
 
-- Python 3.11  
+- Python 3.10  
 - TensorFlow 2.19  
 - Flask  
 - NumPy  
